@@ -88,7 +88,7 @@ export default function App() {
 
     return (
         <ParentDiv>
-            <ForEmoji>😜</ForEmoji>
+            <ForEmoji>🤠</ForEmoji>
             <SlayageNote> added in the emoji to be cutesy, also the api's joke are disappointing</SlayageNote>
             <Button onClick={fetchJoke}>Another one</Button>
             <Joker data={data}/>

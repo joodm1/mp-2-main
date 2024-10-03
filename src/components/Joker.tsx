@@ -34,7 +34,6 @@ const StatusPara = styled.div`
     margin-top: 0;
     background-color: black; 
     color: greenyellow;
- 
     font:  small-caps bold calc(1vw) 'Times New Roman';
     text-align: center;
     justify-content: center; /*horizontally*/
