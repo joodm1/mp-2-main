@@ -7,25 +7,20 @@ import {Joke} from "./interfaces/Joke.ts"; // Fixed typo in import path
 const ParentDiv = styled.div`
     width: 70vw;
     margin: auto;
-    height: 100vh; //why not height100 with display flex?
+    height: 100vh; //why not height100 with display flex? 
     background-color: rebeccapurple;
 
 `;
 
 
-const SlayageNote = styled.p`
 
-    margin-left: 28%; //i know it's an odd number but it's the only one that centered
-
-    background-color: rebeccapurple;
-
-`;
 
 
 
 const ForEmoji = styled.p`
     font-size: calc(5px + 20vw);
     text-align: center;  // To center the emoji horizontally
+    
 `;
 
 
@@ -35,19 +30,19 @@ const Button = styled.button`
     align-items: center;
     background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
     border: 0;
-    border-radius: 8px;
+    border-radius: 8%;
     box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
     box-sizing: border-box;
     color: #FFFFFF;
     display: flex;
     font-family: Phantomsans, sans-serif;
-    font-size: 20px;
+    font-size: calc(2px + 3vw);
     justify-content: center;
     line-height: 1em;
-    max-width: 100%;
-    min-width: 140px;
+    max-width: 50%;
+   
 
-    padding: 19px 24px;
+    padding: 1%;
     text-decoration: none;
     user-select: none;
     -webkit-user-select: none;
@@ -55,7 +50,7 @@ const Button = styled.button`
     white-space: nowrap;
     cursor: pointer;
 
-    margin-left: 42%;
+    margin-left: 36%;
     margin-top: 5%;
 
     &:hover {
@@ -74,11 +69,11 @@ export default function App() {
     async function fetchJoke(): Promise<void> {
         const rawData = await fetch("https://icanhazdadjoke.com/", {
             headers: {
-                Accept: "application/json",
+                Accept: "application/json", //this is the format they had on the api website
             },
         });
         const jokeData: Joke = await rawData.json();
-        setData([jokeData]);
+        setData([jokeData]);//added to to a
     }
 
     useEffect(() => {
@@ -89,7 +84,6 @@ export default function App() {
     return (
         <ParentDiv>
             <ForEmoji>🤠</ForEmoji>
-            <SlayageNote> added in the emoji to be cutesy, also the api's joke are disappointing</SlayageNote>
             <Button onClick={fetchJoke}>Another one</Button>
             <Joker data={data}/>
 

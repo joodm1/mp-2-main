@@ -14,8 +14,8 @@ const JokeBox = styled.div`
     margin-top: 5%;
     background-color: black; 
     color: white;
-    border: 3px darkred solid;
-    font:  small-caps bold calc(5px + 1.5vw) 'Times New Roman';
+    border: 3px white solid;
+    font:  small-caps bold calc(5px + 2.5vw) 'Times New Roman';
     text-align: center;
     justify-content: center; /*horizontally*/
     align-items: center; /* apparently vertically?? */
