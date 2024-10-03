@@ -8,18 +8,26 @@ import { Joke } from "./interfaces/Joke.ts"; // Fixed typo in import path
 const ParentDiv = styled.div`
     width: 70vw;
     margin: auto;
-  
-    height:100vh;//why not height100 with display flex
+    height:100vh;//why not height100 with display flex?
     background-color: rebeccapurple;
 
 `;
 
 
+
+const SlayageNote = styled.p`
+ 
+    margin-left: 28%; //i know it's an odd number but it's the only one that centered
+  
+    background-color: rebeccapurple;
+
+`;
+
 const Photos = styled.img`
-    width: 10%; 
+    width: 40%; 
     height: auto;
     display:block;
-    margin: 0 auto; 
+    margin: auto; 
    
 
 `;
@@ -41,8 +49,7 @@ const Button = styled.button`
     line-height: 1em;
     max-width: 100%;
     min-width: 140px;
-    margin-left: 42%;
-    margin-top: 5%;
+  
     padding: 19px 24px;
     text-decoration: none;
     user-select: none;
@@ -50,6 +57,9 @@ const Button = styled.button`
     touch-action: manipulation;
     white-space: nowrap;
     cursor: pointer;
+
+    margin-left: 42%;
+    margin-top: 5%;
 
     &:hover {
         box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
@@ -76,30 +86,14 @@ export default function App() {
     useEffect(()=>{fetchJoke();}, []);
 
 
-    // how do i change it through this? just change
-    // useEffect Hook for fetching the data and error handling.
-    // useEffect(() => {
-    //     async function fetchData(): Promise<void> {
-    //         const rawData = await fetch("https://icanhazdadjoke.com/", {
-    //             headers:{
-    //                 Accept: "application/json",
-    //             },
-    //         });
-    //         const jokeData: Joke= await rawData.json();
-    //         setData([jokeData]);
-    //     }
-    //
-    //
-    //     fetchData()
-    //         .then(() => console.log("yay"))
-    //         .catch((e: Error) => console.log("nay" + e));
-    // }, []);
 
     return (
         <ParentDiv>
             <Photos src={"../public/laughing-emoji.svg"} alt="Joke" />
-            <Joker data={data}/>
+            <SlayageNote> added in the emoji to be cutesy, also the api's joke are disappointing</SlayageNote>
             <Button onClick={fetchJoke}>Another one</Button>
+            <Joker data={data}/>
+
         </ParentDiv>
     );
 }
