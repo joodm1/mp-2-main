@@ -24,7 +24,7 @@ const SlayageNote = styled.p`
 
 
 const ForEmoji = styled.p`
-    font-size: 100px;
+    font-size: calc(5px + 20vw);
     text-align: center;  // To center the emoji horizontally
 `;
 
