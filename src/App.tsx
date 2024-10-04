@@ -18,31 +18,27 @@ const ParentDiv = styled.div`
 
 
 const ForEmoji = styled.p`
-    font-size: calc(5px + 20vw);
+    font-size: calc(5px + 18vw);
     text-align: center;  // To center the emoji horizontally
     
 `;
 
 
 
-//i got the button styled details from online just cause it's pretty
+//i got the button styled details from online just cause it's pretty :) <3
 const Button = styled.button`
-    align-items: center;
     background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
-    border: 0;
+ 
     border-radius: 8%;
     box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
     box-sizing: border-box;
     color: #FFFFFF;
     display: flex;
     font-family: Phantomsans, sans-serif;
-    font-size: calc(2px + 3vw);
+    font-size: calc(2px + 2vw);
     justify-content: center;
-    line-height: 1em;
-    max-width: 50%;
-   
-
-    padding: 1%;
+  
+    padding: 2%;
     text-decoration: none;
     user-select: none;
     -webkit-user-select: none;
@@ -50,13 +46,24 @@ const Button = styled.button`
     white-space: nowrap;
     cursor: pointer;
 
-    margin-left: 36%;
-    margin-top: 5%;
+    position: fixed;
+    bottom: 2%;
+
+  
+    max-width: 25%; 
+    margin-left: 27%;
 
     &:hover {
         box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
         transition-duration: .1s;
         outline: 0;
+    }
+
+    @media screen and (max-width: 765px) {
+        color: white;
+        font-size: calc(2px + 4vw);
+        max-width: 40%; // Adjust button width for smaller screens
+        margin-left: 21%;//looked a little wonky had to adjust it
     }
 `;
 
@@ -84,8 +91,9 @@ export default function App() {
     return (
         <ParentDiv>
             <ForEmoji>🤠</ForEmoji>
-            <Button onClick={fetchJoke}>Another one</Button>
+
             <Joker data={data}/>
+            <Button onClick={fetchJoke}>Another one</Button>
 
         </ParentDiv>
     );
